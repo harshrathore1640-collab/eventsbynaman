@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Eventz Ideas by Naman — Wedding planning and event design services in Moga, Punjab.">
+<meta name="theme-color" content="#17100e">
+<title>Eventz Ideas by Naman | Wedding Planning</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#100a09;
+  --surface:#18100e;
+  --cream:#f7f0e5;
+  --muted:#b9aa9d;
+  --gold:#c9a46a;
+  --gold2:#e6c993;
+  --rose:#8d5b54;
+  --line:rgba(230,201,147,.2);
+  --max:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:"DM Sans",sans-serif;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{width:100%;height:100%;display:block;object-fit:cover}
+.container{width:min(var(--max),92%);margin:auto}
+.section{padding:110px 0}
+.eyebrow{
+  color:var(--gold2);font-size:11px;font-weight:700;
+  letter-spacing:.25em;text-transform:uppercase;margin-bottom:15px
+}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:.96;font-weight:600}
+h2{font-size:clamp(46px,6vw,78px)}
+.section-head{max-width:760px;margin-bottom:55px}
+.section-head p{color:var(--muted);margin-top:20px;font-size:16px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:52px;padding:0 25px;border:1px solid var(--gold);
+  font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  transition:.35s ease
+}
+.btn-gold{background:var(--gold);color:#1a110d}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-3px)}
+.btn-light{color:var(--cream)}
+.btn-light:hover{background:rgba(230,201,147,.12);transform:translateY(-3px)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:50;
+  padding:22px 0;background:linear-gradient(180deg,rgba(16,10,9,.88),transparent)
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:13px}
+.logo{
+  width:50px;height:50px;border:1px solid var(--gold);
+  border-radius:50%;display:grid;place-items:center;
+  font:700 26px "Cormorant Garamond";color:var(--gold2);
+  background:rgba(10,7,6,.45)
+}
+.brand-name{font-size:13px;font-weight:700;letter-spacing:.12em}
+.brand-name span{display:block;font-size:9px;color:var(--gold);letter-spacing:.22em;margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:29px}
+.nav-links a{font-size:12px;color:#e4dcd3;transition:.25s}
+.nav-links a:hover{color:var(--gold2)}
+.menu-btn{display:none;border:0;background:none;color:#fff;font-size:27px}
+
+/* HERO */
+.hero{
+  min-height:100vh;position:relative;display:flex;align-items:flex-end;
+  background:
+    linear-gradient(90deg,rgba(12,7,6,.84),rgba(12,7,6,.32) 60%,rgba(12,7,6,.72)),
+    linear-gradient(0deg,rgba(12,7,6,.85),transparent 60%),
+    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2200&q=90") center/cover
+}
+.hero-content{padding:175px 0 95px;max-width:800px}
+.hero h1{font-size:clamp(65px,9vw,125px)}
+.hero h1 span{display:block;color:var(--gold2);font-style:italic}
+.hero-sub{max-width:640px;color:#ded4ca;font-size:17px;margin:25px 0 31px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-note{
+  position:absolute;right:4%;bottom:32px;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  color:#d6c9bb;font-size:10px;letter-spacing:.25em;text-transform:uppercase
+}
+
+/* INTRO */
+.intro{background:#120b0a}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.intro-image{height:620px;overflow:hidden}
+.intro-image img{transition:1s}
+.intro-image:hover img{transform:scale(1.04)}
+.intro-copy p{color:var(--muted);font-size:16px;margin-bottom:18px}
+.signature{margin-top:28px;color:var(--gold2);font:italic 28px "Cormorant Garamond"}
+
+/* SERVICES */
+.services{background:#0f0908}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--line);background:var(--line);gap:1px
+}
+.service{
+  background:var(--surface);padding:36px;min-height:275px;
+  position:relative;transition:.35s
+}
+.service:hover{background:#201512}
+.number{color:var(--gold);font-size:11px;letter-spacing:.18em}
+.service h3{font-size:34px;margin:42px 0 14px}
+.service p{color:var(--muted);font-size:13px}
+.arrow{position:absolute;right:28px;bottom:24px;color:var(--gold2);font-size:23px}
+
+/* GALLERY */
+.gallery-section{background:#130c0b}
+.gallery{
+  display:grid;grid-template-columns:1.1fr .9fr .9fr;
+  grid-template-rows:310px 310px;gap:12px
+}
+.photo{position:relative;overflow:hidden}
+.photo img{transition:.8s}
+.photo:hover img{transform:scale(1.05)}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.58),transparent 65%)}
+.photo:first-child{grid-row:1/3}
+.photo-title{position:absolute;z-index:2;left:22px;bottom:19px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+
+/* EXPERIENCE */
+.experience{background:#0f0908}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+.step{padding:30px 18px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step strong{color:var(--gold);font:600 12px "DM Sans"}
+.step h3{font-size:29px;margin:27px 0 10px}
+.step p{color:var(--muted);font-size:13px}
+
+/* CTA */
+.cta{
+  padding:115px 0;
+  background:
+    linear-gradient(90deg,rgba(15,8,7,.9),rgba(15,8,7,.5)),
+    url("https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=2200&q=85") center/cover
+}
+.cta-copy{max-width:820px}
+.cta h2{font-size:clamp(48px,6vw,82px)}
+.cta p{max-width:650px;color:#ddd0c4;margin:20px 0 30px}
+
+/* CONTACT */
+.contact{background:#0e0807}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px}
+.info-list{display:grid;gap:20px}
+.info{padding-bottom:19px;border-bottom:1px solid var(--line)}
+.info small{display:block;color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.17em;margin-bottom:4px}
+.info a,.info div{font-size:19px}
+.contact-card{background:#18100e;border:1px solid var(--line);padding:38px}
+.contact-card h3{font-size:38px;margin-bottom:22px}
+.form{display:grid;gap:13px}
+.form input,.form textarea{
+  width:100%;background:#0e0807;border:1px solid #382824;
+  color:#fff;padding:15px;font:inherit;outline:none
+}
+.form input:focus,.form textarea:focus{border-color:var(--gold)}
+.form textarea{min-height:135px;resize:vertical}
+
+/* FOOTER */
+footer{background:#090605;border-top:1px solid var(--line);padding:46px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:38px}
+.footer-title{font:600 30px "Cormorant Garamond"}
+.footer p,.footer a{color:var(--muted);font-size:12px}
+.footer p{margin-top:10px;max-width:330px}
+.footer h4{color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+.footer a{display:block;margin:8px 0}
+.footer a:hover{color:var(--gold2)}
+.copy{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #1b1210;margin-top:35px;padding-top:18px;color:#665b54;font-size:10px}
+
+/* FLOATING */
+.floating{
+  position:fixed;right:19px;bottom:19px;z-index:70;
+  display:flex;flex-direction:column;gap:9px
+}
+.float{
+  width:53px;height:53px;border-radius:50%;
+  display:grid;place-items:center;font-size:19px;
+  box-shadow:0 12px 28px rgba(0,0,0,.45);transition:.25s
+}
+.float:hover{transform:translateY(-4px) scale(1.04)}
+.call{background:#19110f;border:1px solid #75665b;color:#fff}
+.wa{background:#168b53;border:1px solid #4fd596;color:#fff}
+
+/* MOBILE */
+@media(max-width:900px){
+  .nav-links{display:none}.menu-btn{display:block}
+  .intro-grid,.contact-grid{grid-template-columns:1fr}
+  .intro-image{height:470px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:300px 220px 220px}
+  .photo:first-child{grid-column:1/3;grid-row:1}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(2){border-right:0}
+  .step:nth-child(n+3){border-top:1px solid var(--line)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .section{padding:76px 0}
+  .hero-content{padding:145px 0 78px}
+  .hero h1{font-size:61px}
+  .hero-sub{font-size:15px}
+  .hero-note{display:none}
+  .services-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr;grid-template-rows:auto}
+  .photo,.photo:first-child{grid-column:auto;grid-row:auto;height:270px}
+  .steps{grid-template-columns:1fr}
+  .step,.step:nth-child(2),.step:nth-child(n+3){border-right:0;border-top:0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .footer-grid{grid-template-columns:1fr}
+  .copy{flex-direction:column}
+  .floating{right:13px;bottom:13px}
+  .float{width:48px;height:48px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+ <div class="container nav-inner">
+  <a class="brand" href="#home">
+   <div class="logo">N</div>
+   <div class="brand-name">EVENTZ IDEAS BY NAMAN<span>WEDDING PLANNING</span></div>
+  </a>
+  <div class="nav-links">
+   <a href="#home">Home</a>
+   <a href="#about">About</a>
+   <a href="#services">Services</a>
+   <a href="#gallery">Gallery</a>
+   <a href="#contact">Contact</a>
+   <a class="btn btn-gold" href="https://wa.me/919814800990?text=Hello%20Eventz%20Ideas%20by%20Naman%2C%20I%20would%20like%20to%20discuss%20a%20wedding%20requirement." target="_blank">WhatsApp</a>
+  </div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+ </div>
+</nav>
+
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#100a09;z-index:45;padding:120px 9%;">
+ <div style="display:grid;gap:25px;font:600 38px 'Cormorant Garamond'">
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+ </div>
+</div>
+
+<header class="hero" id="home">
+ <div class="container hero-content reveal">
+  <div class="eyebrow">Wedding Planning Service · Moga, Punjab</div>
+  <h1>Moments<br><span>Made Unforgettable.</span></h1>
+  <p class="hero-sub">
+   Eventz Ideas by Naman creates beautifully planned wedding experiences,
+   bringing together thoughtful details, elegant décor and seamless celebration planning.
+  </p>
+  <div class="actions">
+   <a class="btn btn-gold" href="https://wa.me/919814800990?text=Hello%20Eventz%20Ideas%20by%20Naman%2C%20I%20would%20like%20to%20plan%20a%20wedding." target="_blank">Plan Your Wedding</a>
+   <a class="btn btn-light" href="tel:+919814800990">Call 98148 00990</a>
+  </div>
+ </div>
+ <div class="hero-note">Celebrations · Details · Memories</div>
+</header>
+
+<section class="section intro" id="about">
+ <div class="container intro-grid">
+  <div class="intro-image reveal">
+   <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1400&q=85" alt="Elegant wedding celebration">
+  </div>
+  <div class="reveal">
+   <div class="eyebrow">Eventz Ideas by Naman</div>
+   <h2>Your celebration deserves its own story.</h2>
+   <div style="height:22px"></div>
+   <p>
+    Eventz Ideas by Naman is a wedding planning service based in Moga, Punjab,
+    focused on creating memorable celebrations with a polished visual experience.
+   </p>
+   <p>
+    From the first idea to the final celebration, every element can be shaped
+    around the couple, the occasion and the atmosphere they want their guests to remember.
+   </p>
+   <div class="signature">Plan beautifully. Celebrate completely.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section services" id="services">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">Our Services</div>
+   <h2>Everything your celebration needs to feel special.</h2>
+   <p>Wedding-focused planning and event experiences designed around your occasion and vision.</p>
+  </div>
+
+  <div class="services-grid reveal">
+   <article class="service">
+    <div class="number">01 / PLANNING</div>
+    <h3>Wedding Planning</h3>
+    <p>Organised planning support to bring your wedding vision together from concept to celebration.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">02 / DECOR</div>
+    <h3>Wedding Décor</h3>
+    <p>Elegant visual styling, colour direction and decorative details for memorable wedding spaces.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">03 / EVENTS</div>
+    <h3>Event Design</h3>
+    <p>A cohesive look and feel for the important moments that make your celebration unique.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">04 / CEREMONIES</div>
+    <h3>Celebration Setup</h3>
+    <p>Thoughtful setup for wedding functions, ceremonies and special gathering spaces.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">05 / DETAILS</div>
+    <h3>Theme & Details</h3>
+    <p>From intimate details to larger visual elements, create a celebration that feels personal.</p>
+    <div class="arrow">↗</div>
+   </article>
+   <article class="service">
+    <div class="number">06 / SUPPORT</div>
+    <h3>Event Coordination</h3>
+    <p>Practical coordination support to help your event move smoothly and stay beautifully organised.</p>
+    <div class="arrow">↗</div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section gallery-section" id="gallery">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">Celebration Gallery</div>
+   <h2>A little inspiration for your big day.</h2>
+   <p>Wedding décor, ceremony settings and celebration moments that inspire a refined event aesthetic.</p>
+  </div>
+
+  <div class="gallery reveal">
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=85" alt="Wedding couple">
+    <div class="photo-title">The Celebration</div>
+   </div>
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=85" alt="Wedding decor">
+    <div class="photo-title">Wedding Decor</div>
+   </div>
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1000&q=85" alt="Wedding table">
+    <div class="photo-title">Table Styling</div>
+   </div>
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1470290378698-263fa7ca60ab?auto=format&fit=crop&w=1000&q=85" alt="Wedding venue">
+    <div class="photo-title">Venue Details</div>
+   </div>
+   <div class="photo">
+    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85" alt="Wedding celebration">
+    <div class="photo-title">Beautiful Moments</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section experience">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">The Experience</div>
+   <h2>From first conversation to final celebration.</h2>
+  </div>
+  <div class="steps reveal">
+   <div class="step"><strong>01</strong><h3>Connect</h3><p>Share your date, occasion and celebration vision.</p></div>
+   <div class="step"><strong>02</strong><h3>Imagine</h3><p>Shape the mood, theme and overall experience.</p></div>
+   <div class="step"><strong>03</strong><h3>Plan</h3><p>Bring the details, décor and event flow together.</p></div>
+   <div class="step"><strong>04</strong><h3>Create</h3><p>Turn the planned concept into a beautiful setting.</p></div>
+   <div class="step"><strong>05</strong><h3>Celebrate</h3><p>Enjoy your celebration while the details come together.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="container cta-copy reveal">
+  <div class="eyebrow">Your Day. Your Story.</div>
+  <h2>Let's create a celebration worth remembering.</h2>
+  <p>Tell us about your wedding or event and connect directly with Eventz Ideas by Naman.</p>
+  <div class="actions">
+   <a class="btn btn-gold" href="https://wa.me/919814800990?text=Hello%20Eventz%20Ideas%20by%20Naman%2C%20I%20want%20to%20discuss%20my%20wedding%20plans." target="_blank">Enquire on WhatsApp</a>
+   <a class="btn btn-light" href="tel:+919814800990">Call Now</a>
+  </div>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="eyebrow">Get In Touch</div>
+   <h2>Tell us about your celebration.</h2>
+  </div>
+
+  <div class="contact-grid">
+   <div class="info-list reveal">
+    <div class="info"><small>Call</small><a href="tel:+919814800990">09814 800990</a></div>
+    <div class="info"><small>WhatsApp</small><a href="https://wa.me/919814800990" target="_blank">+91 98148 00990</a></div>
+    <div class="info"><small>Email</small><a href="mailto:namandhawan426@gmail.com">namandhawan426@gmail.com</a></div>
+    <div class="info"><small>Location</small><div>Moga, Punjab, India</div></div>
+    <div class="info"><small>Instagram</small><a href="https://www.instagram.com/eventz_ideas_by_naman_/" target="_blank">@eventz_ideas_by_naman_</a></div>
+   </div>
+
+   <div class="contact-card reveal">
+    <h3>Start a conversation</h3>
+    <form class="form" onsubmit="sendWhatsApp(event)">
+     <input id="name" required placeholder="Your name">
+     <input id="phone" required type="tel" placeholder="Your phone number">
+     <input id="date" placeholder="Wedding / Event date">
+     <input id="event" placeholder="Wedding / Reception / Other event">
+     <textarea id="message" placeholder="Tell us about your celebration, venue or ideas"></textarea>
+     <button class="btn btn-gold" type="submit">Send Enquiry on WhatsApp ↗</button>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div>
+    <div class="footer-title">Eventz Ideas by Naman</div>
+    <p>Wedding planning and event experiences in Moga, Punjab — created around beautiful details and unforgettable celebrations.</p>
+   </div>
+   <div>
+    <h4>Explore</h4>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+   </div>
+   <div>
+    <h4>Services</h4>
+    <a href="#services">Wedding Planning</a>
+    <a href="#services">Wedding Décor</a>
+    <a href="#services">Event Design</a>
+    <a href="#services">Coordination</a>
+   </div>
+   <div>
+    <h4>Connect</h4>
+    <a href="tel:+919814800990">09814 800990</a>
+    <a href="https://wa.me/919814800990" target="_blank">WhatsApp</a>
+    <a href="mailto:namandhawan426@gmail.com">Email</a>
+    <a href="https://www.instagram.com/eventz_ideas_by_naman_/" target="_blank">Instagram</a>
+   </div>
+  </div>
+  <div class="copy">
+   <span>© <span id="year"></span> Eventz Ideas by Naman. All rights reserved.</span>
+   <span>Wedding Planning · Moga, Punjab</span>
+  </div>
+ </div>
+</footer>
+
+<div class="floating">
+ <a class="float call" href="tel:+919814800990" aria-label="Call Eventz Ideas by Naman">☎</a>
+ <a class="float wa" href="https://wa.me/919814800990?text=Hello%20Eventz%20Ideas%20by%20Naman%2C%20I%20would%20like%20to%20enquire%20about%20wedding%20planning." target="_blank" aria-label="WhatsApp Eventz Ideas by Naman">◉</a>
+</div>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+
+function toggleMenu(){
+ const m=document.getElementById('mobileMenu');
+ m.style.display=m.style.display==='none'?'block':'none';
+}
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+function sendWhatsApp(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const phone=document.getElementById('phone').value.trim();
+ const date=document.getElementById('date').value.trim();
+ const event=document.getElementById('event').value.trim();
+ const message=document.getElementById('message').value.trim();
+
+ const text=`Hello Eventz Ideas by Naman,
+
+My name is ${name}.
+Phone: ${phone}
+Event: ${event || 'Wedding / Event'}
+Date: ${date || 'Not decided yet'}
+Details: ${message || 'I would like to discuss my wedding planning requirement.'}
+
+Please contact me.`;
+
+ window.open('https://wa.me/919814800990?text='+encodeURIComponent(text),'_blank');
+}
+</script>
+</body>
+</html>
